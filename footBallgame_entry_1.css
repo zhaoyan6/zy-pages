@@ -1,0 +1,393 @@
+
+@charset "UTF-8";
+/*
+* @mixin
+*@param $url 图片地址
+* @param $el 添加背景图片的元素（class类名）
+* @param $picname  背景图片名称
+* @param $picformt 背景图片格式
+* @param $bgsize   背景图片大小，默认100%；
+* 使用：在最顶层中直接引入 @include elebg(unres-btn ,res-btn, png);
+*/
+/*
+*@const 根据1080p分辨率来设置比率
+**/
+/*
+* @Functions
+* @description 根据dpr设置字体大小
+* @param $number Include units number(含单位字符的数值)
+* @return pure number(纯数字)
+*/
+/*
+*@Mixin 去除内、外边距
+*/
+/*
+*@Mixin 满屏尺寸
+*/
+/*
+*@Mixin 折行
+*/
+/*
+*@mixin 主要供头发线来调用针对不同的dpr给1px解决方案
+*/
+/*
+*@mixin 解决android下1px的问题（头发线）
+*/
+/*
+* @Functions
+* @description Strip units from $number(去掉数值后的单位)
+* @param $number Include units number(含单位字符的数值)
+* @return pure number(纯数字)
+*/
+/*
+* @Functions
+* @description Convert the px to rem (将实际的设计尺寸px转为相对的rem)
+* @param $origLen 设计图上的实际尺寸
+* @return rem
+*/
+/*
+* @Functions
+* @description Convert the ratio to percentage between real length and max length (得到实际长度和最大长度的百分比)
+* @param $tinyLen 设计图上的实际尺寸
+* @param $maxLen  设计图上的容器最大尺寸
+* @return percent(百分比)
+*/
+/*
+* @mixin
+*@param $url 图片地址
+* @param $el 添加背景图片的元素（class类名）
+* @param $picname  背景图片名称
+* @param $picformt 背景图片格式
+* @param $bgsize   背景图片大小，默认100%；
+* 使用：在最顶层中直接引入 @include elebg(unres-btn ,res-btn, png);
+*/
+/*
+*@const 根据1080p分辨率来设置比率
+**/
+/*
+* @Functions
+* @description 根据dpr设置字体大小
+* @param $number Include units number(含单位字符的数值)
+* @return pure number(纯数字)
+*/
+/*
+*@Mixin 去除内、外边距
+*/
+/*
+*@Mixin 满屏尺寸
+*/
+/*
+*@Mixin 折行
+*/
+/*
+*@mixin 主要供头发线来调用针对不同的dpr给1px解决方案
+*/
+/*
+*@mixin 解决android下1px的问题（头发线）
+*/
+/*
+* @Functions
+* @description Strip units from $number(去掉数值后的单位)
+* @param $number Include units number(含单位字符的数值)
+* @return pure number(纯数字)
+*/
+/*
+* @Functions
+* @description Convert the px to rem (将实际的设计尺寸px转为相对的rem)
+* @param $origLen 设计图上的实际尺寸
+* @return rem
+*/
+/*
+* @Functions
+* @description Convert the ratio to percentage between real length and max length (得到实际长度和最大长度的百分比)
+* @param $tinyLen 设计图上的实际尺寸
+* @param $maxLen  设计图上的容器最大尺寸
+* @return percent(百分比)
+*/
+html {
+  color: #000;
+  overflow-y: scroll;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+html * {
+  outline: none;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  -webkit-text-size-adjust: none;
+  -webkit-tap-highlight-color: transparent;
+  margin: 0;
+  padding: 0;
+}
+::webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+/**app内默认使用miui字体**/
+html, body {
+  height: 100%;
+  font-family: miui;
+  color: rgba(0, 0, 0, 0.6);
+}
+body {
+  width: 100%;
+  background-color: #efefef;
+  overflow-x: hidden;
+}
+input, select, textarea {
+  font-size: 100%;
+}
+
+/* 去掉各 Table  cell 的边距并让其边重合 */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* 去掉列表前的标识, li 会继承 */
+ol,
+ul {
+  list-style: none;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+  font-weight: 500;
+}
+
+/* 统一上标和下标 */
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sup {
+  top: -0.5em;
+}
+sub {
+  bottom: -0.25em;
+}
+
+/* 默认不显示下划线*/
+ins, a, a:active, a:hover, a:visited {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+/* 几种字体大小 */
+[data-dpr="1"] .fs-28 {
+  font-size: 9.33333px;
+}
+[data-dpr="2"] .fs-28 {
+  font-size: 14px;
+}
+[data-dpr="3"] .fs-28 {
+  font-size: 28px;
+}
+[data-dpr="1"] .fs-30 {
+  font-size: 10px;
+}
+[data-dpr="2"] .fs-30 {
+  font-size: 15px;
+}
+[data-dpr="3"] .fs-30 {
+  font-size: 30px;
+}
+[data-dpr="1"] .fs-32 {
+  font-size: 10.66667px;
+}
+[data-dpr="2"] .fs-32 {
+  font-size: 16px;
+}
+[data-dpr="3"] .fs-32 {
+  font-size: 32px;
+}
+[data-dpr="1"] .fs-36 {
+  font-size: 12px;
+}
+[data-dpr="2"] .fs-36 {
+  font-size: 18px;
+}
+[data-dpr="3"] .fs-36 {
+  font-size: 36px;
+}
+[data-dpr="1"] .fs-40 {
+  font-size: 13.33333px;
+}
+[data-dpr="2"] .fs-40 {
+  font-size: 20px;
+}
+[data-dpr="3"] .fs-40 {
+  font-size: 40px;
+}
+[data-dpr="1"] .fs-45 {
+  font-size: 15px;
+}
+[data-dpr="2"] .fs-45 {
+  font-size: 22.5px;
+}
+[data-dpr="3"] .fs-45 {
+  font-size: 45px;
+}
+.fw-bold {
+  font-weight: bold;
+}
+.narrow-right {
+  width: 0.18519rem;
+  height: 0.18519rem;
+  border-right: solid 1px rgba(0, 0, 0, 0.9);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.9);
+  transform: rotate(-45deg);
+}
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+/*规则玩法弹层*/
+.brand {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: #8dc443 url(img/kaiqiu.jpg) no-repeat top;
+  background-size: 100% auto;
+}
+.start-game {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 135% 9% 0 0;
+  width: 43%;
+  padding-top: 22%;
+}
+
+/*临时测试star*/
+.temporary {
+  position: absolute;
+  right: 1%;
+  width: 15%;
+  font-size: 0.18519rem;
+  line-height: 0.46296rem;
+  text-align: center;
+  border-radius: 0.09259rem;
+  color: #fff;
+  background: #ed9d19;
+}
+.top0 {
+  top: 11%;
+}
+.top1 {
+  top: 7%;
+}
+.top2 {
+  top: 3%;
+}
+.temporary.color {
+  color: red;
+}
+
+/*临时测试end*/
+body {
+  background: url(img/lvdi.png) repeat center;
+  background-size: 100% auto;
+}
+#app {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+.court {
+  width: 100%;
+  padding-top: 67.69231%;
+  background: url(img/qiumen.jpg) no-repeat center;
+  background-size: 100% 100%;
+}
+.goalkeeper {
+  position: absolute;
+  top: 18.46154%;
+  left: 50%;
+  width: 4.61538%;
+  padding-top: 12.15385%;
+  margin-left: -2.30769%;
+}
+.rescue {
+  background: url(img/puqiu.png) no-repeat top;
+  background-size: 100% auto;
+}
+.sink {
+  background: url(img/shoumenyuan.png) no-repeat top;
+  background-size: 100% auto;
+}
+.hold {
+  background: url(img/jiedao.png) no-repeat top;
+  background-size: 100% auto;
+}
+.football {
+  background: url(img/qiuqiu.png) no-repeat center;
+  background-size: 100% 100%;
+  width: 15.38462%;
+  padding-top: 15.38462%;
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  margin-left: -7.69231%;
+}
+
+/*箭头*/
+.direction {
+  width: 10.15385%;
+  padding-top: 14.15385%;
+  position: absolute;
+  top: 65%;
+  margin-left: -5.07692%;
+  transition: All 0.2s ease-in-out;
+}
+.d0 {
+  left: 30%;
+  background: url(img/lll.png) no-repeat center;
+  background-size: 100% 100%;
+}
+.d1 {
+  left: 50%;
+  background: url(img/zzz.png) no-repeat center;
+  background-size: 100% 100%;
+}
+.d2 {
+  left: 70%;
+  background: url(img/rrr.png) no-repeat center;
+  background-size: 100% 100%;
+}
+.active {
+  transform: scale(1.5);
+}
+
+/*力量条*/
+.power-bar {
+  width: 3.84615%;
+  padding-top: 46.15385%;
+  border: 1px solid rgba(255, 154, 18, 0.79);
+  border-radius: 0.23148rem;
+  position: absolute;
+  bottom: 10%;
+  right: 6%;
+  overflow: hidden;
+}
+.rainbow {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 20%;
+  background-image: -webkit-linear-gradient(top, #e5df5e 0%, #ffb247 50%, #f97153 100%);
+  /*background-image: -moz-linear-gradient(left,#E50743 0%, #F9870F 15%, #E8ED30 30%, #3FA62E 45%,#3BB4D7 60%,#2F4D9E 75%,#71378A 80%);*/
+  /*background-image: -o-linear-gradient(left,#E50743 0%, #F9870F 15%, #E8ED30 30%, #3FA62E 45%,#3BB4D7 60%,#2F4D9E 75%,#71378A 80%);*/
+  /*background-image: -ms-linear-gradient(left,#E50743 0%, #F9870F 15%, #E8ED30 30%, #3FA62E 45%,#3BB4D7 60%,#2F4D9E 75%,#71378A 80%);*/
+  /*background-image: linear-gradient(left,#E50743 0%, #F9870F 15%, #E8ED30 30%, #3FA62E 45%,#3BB4D7 60%,#2F4D9E 75%,#71378A 80%);*/
+}
